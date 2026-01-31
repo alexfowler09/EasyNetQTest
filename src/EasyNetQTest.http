@@ -1,0 +1,6 @@
+@EasyNetQTest_HostAddress = http://localhost:5207
+
+GET {{EasyNetQTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
