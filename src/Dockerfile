@@ -4,11 +4,8 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-# COPY ["EasyNetQTest.csproj", "EasyNetQTestv8/"]
-# WORKDIR /src/EasyNetQTestv8
 COPY . .
 RUN dotnet restore "EasyNetQTest.csproj"
-# WORKDIR "EasyNetQTestv8"
 RUN dotnet build "EasyNetQTest.csproj" -c Release -o /app/build
 
 FROM build AS publish
